@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace Tanks.Complete
 {
-    public class TankHealth : MonoBehaviour
+    public class TankHealth : MonoBehaviour, IHealth
     {
         public float m_StartingHealth = 100f;               // The amount of health each tank starts with.
         public Slider m_Slider;                             // The slider to represent how much health the tank currently has.
@@ -20,6 +20,8 @@ namespace Tanks.Complete
         private bool m_Dead;                                // Has the tank been reduced beyond zero health yet?
         private float m_ShieldValue;                        // Percentage of reduced damage when the tank has a shield.
         private bool m_IsInvincible;                        // Is the tank invincible in this moment?
+
+        public float CurrentHealth { get => m_CurrentHealth; set => m_CurrentHealth = value; }
 
         private void Awake ()
         {
