@@ -40,8 +40,8 @@ namespace Tanks.Complete
                 // Add an explosion force.
                 targetRigidbody.AddExplosionForce (m_ExplosionForce, transform.position, m_ExplosionRadius);
 
-                // Find the TankHealth script associated with the rigidbody.
-                IHealth targetHealth = targetRigidbody.GetComponent<IHealth>();
+                // Find the TankHealth script associated with the rigidbody
+                IHealth targetHealth = targetRigidbody.GetComponent<IHealth> ();
 
                 // If there is no TankHealth script attached to the gameobject, go on to the next collider.
                 if (targetHealth == null)
